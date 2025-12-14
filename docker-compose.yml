@@ -1,21 +1,14 @@
-version: "3.9"
-
 services:
   backend:
     build: ./backend
     container_name: project1-backend
     ports:
       - "3000:3000"
-    restart: always
 
-  mongo:
-    image: mongo:6
-    container_name: project1-mongo
+  frontend:
+    build: ./frontend
+    container_name: project1-frontend
     ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-    restart: always
-
-volumes:
-  mongo_data:
+      - "8081:80"
+    depends_on:
+      - backend
