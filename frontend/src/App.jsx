@@ -4,7 +4,6 @@ function App() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    // Dữ liệu mẫu – không gọi backend
     setStudents([
       { id: 1, mssv: "SV001", name: "Nguyễn Văn A", age: 20, className: "CNTT1" },
       { id: 2, mssv: "SV002", name: "Trần Thị B", age: 21, className: "CNTT2" },
@@ -14,10 +13,10 @@ function App() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>📋 Danh sách sinh viên</h1>
+      <h1>Danh sách sinh viên</h1>
 
-      <table border="1" cellPadding="10" width="100%">
-        <thead style={{ background: "#1976d2", color: "#fff" }}>
+      <table border="1" cellPadding="10">
+        <thead>
           <tr>
             <th>#</th>
             <th>MSSV</th>
