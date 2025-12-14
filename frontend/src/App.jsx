@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  const [message, setMessage] = useState("Đang gọi backend...");
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    // Gọi backend (KHÔNG dùng localhost)
-    fetch(import.meta.env.VITE_API_URL)
-      .then(res => res.text())
-      .then(data => setMessage(data))
-      .catch(() => setMessage("❌ Không kết nối được backend"));
-
-    // Dữ liệu bảng sinh viên
+    // Dữ liệu mẫu – không gọi backend
     setStudents([
       { id: 1, mssv: "SV001", name: "Nguyễn Văn A", age: 20, className: "CNTT1" },
       { id: 2, mssv: "SV002", name: "Trần Thị B", age: 21, className: "CNTT2" },
@@ -21,11 +14,7 @@ function App() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>Frontend Project 1</h1>
-
-      <p><b>Backend status:</b> {message}</p>
-
-      <h2>📋 Danh sách sinh viên</h2>
+      <h1>📋 Danh sách sinh viên</h1>
 
       <table border="1" cellPadding="10" width="100%">
         <thead style={{ background: "#1976d2", color: "#fff" }}>
@@ -38,9 +27,9 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {students.map((sv, index) => (
+          {students.map((sv, i) => (
             <tr key={sv.id}>
-              <td>{index + 1}</td>
+              <td>{i + 1}</td>
               <td>{sv.mssv}</td>
               <td>{sv.name}</td>
               <td>{sv.age}</td>
