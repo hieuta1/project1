@@ -5,30 +5,25 @@ function App() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    // 1️⃣ Gọi backend để chứng minh kết nối
+    // Gọi backend (KHÔNG dùng localhost)
     fetch(import.meta.env.VITE_API_URL)
       .then(res => res.text())
       .then(data => setMessage(data))
       .catch(() => setMessage("❌ Không kết nối được backend"));
 
-    // 2️⃣ Dữ liệu sinh viên (tạm thời)
-    const data = [
+    // Dữ liệu bảng sinh viên
+    setStudents([
       { id: 1, mssv: "SV001", name: "Nguyễn Văn A", age: 20, className: "CNTT1" },
       { id: 2, mssv: "SV002", name: "Trần Thị B", age: 21, className: "CNTT2" },
       { id: 3, mssv: "SV003", name: "Lê Văn C", age: 22, className: "CNTT1" },
-    ];
-
-    setStudents(data);
+    ]);
   }, []);
 
   return (
     <div style={{ padding: 20 }}>
       <h1>Frontend Project 1</h1>
 
-      {/* Hiển thị trạng thái backend */}
-      <p><strong>Backend status:</strong> {message}</p>
-
-      <hr />
+      <p><b>Backend status:</b> {message}</p>
 
       <h2>📋 Danh sách sinh viên</h2>
 
