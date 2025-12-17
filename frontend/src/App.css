@@ -40,3 +40,47 @@
 .read-the-docs {
   color: #888;
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background: linear-gradient(135deg, #ff6600, #ff944d);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.header button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  background: white;
+  color: #ff6600;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #f3f3f3;
+}
